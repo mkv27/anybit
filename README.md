@@ -1,3 +1,9 @@
+<p align="center">
+	<picture>
+		<img alt="anybit" src="https://raw.githubusercontent.com/mkv27/anybit/HEAD/.github/logo.svg" width="102" height="96" style="max-width: 100%;">
+	</picture>
+</p>
+
 # anybit
 
 **anybit** is a Zig library that provides various utilities for building modern CLI applications, including ANSI text formatting, argument parsing, progress bars, and logging.
