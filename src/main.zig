@@ -1,7 +1,9 @@
 const std = @import("std");
 const anybit = @import("anybit");
 const ansi = anybit.ansi;
+const gradient_loader = anybit.gradient_loader;
 
+// TODO: Make this a CLI playground
 pub fn main() !void {
     var gpa = std.heap.GeneralPurposeAllocator(.{}){};
     const allocator = gpa.allocator();
@@ -26,4 +28,6 @@ pub fn main() !void {
     std.debug.print("{s}\n", .{warningMsg});
     std.debug.print("{s}\n", .{errorMsg});
     std.debug.print("{s}\n", .{successMsg});
+
+    try gradient_loader.startGradientLoader("Loading...", .{ .r = 85, .g = 105, .b = 251 });
 }
