@@ -7,11 +7,10 @@ This project is primarily a learning journey to improve Zig skills and become a 
 This library is fully inspired by [kleur](https://github.com/lukeed/kleur), a minimal and fast ANSI color formatting library for JavaScript.
 
 ## Features
-- ✅ **ANSI Styling**: Easily add colors and styles to terminal output.
-- ✅ **Argument Parsing**: Simple and efficient command-line argument handling.
-- ✅ **Progress Bars**: Display smooth loading indicators.
-- ✅ **Logging**: Structured logging with different verbosity levels.
-- ✅ **Lightweight**: Minimal dependencies, optimized for performance.
+- [x] **Lightweight**: Minimal dependencies, optimized for performance.
+- [x] **ANSI Styling**: Easily add colors and styles to terminal output.
+- [x] **Loading Bars**: Display smooth loading indicators.
+- [ ] **Argument Parsing**: Simple and efficient command-line argument handling.
 
 ## Installation
 
