@@ -1,6 +1,6 @@
 <p align="center">
 	<picture>
-		<img alt="anybit" src="https://raw.githubusercontent.com/mkv27/anybit/HEAD/.github/logo.svg" width="102" height="96" style="max-width: 100%;">
+		<img alt="anybit" src="https://raw.githubusercontent.com/mkv27/anybit/HEAD/.github/logo.svg" width="102" height="96">
 	</picture>
 </p>
 
