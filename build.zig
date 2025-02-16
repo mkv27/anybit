@@ -4,8 +4,8 @@ pub fn build(b: *std.Build) void {
     const target = b.standardTargetOptions(.{});
     const optimize = b.standardOptimizeOption(.{});
 
-    // Create the `anybit` module
-    const anybit_module = b.createModule(.{
+    // Add the `anybit` module, it allows you to import anybit as a module
+    const anybit_module = b.addModule("anybit", .{
         .root_source_file = b.path("src/root.zig"),
     });
 
@@ -17,7 +17,6 @@ pub fn build(b: *std.Build) void {
         .optimize = optimize,
     });
 
-    lib.root_module.addImport("anybit", anybit_module); // Attach module to library
     b.installArtifact(lib);
 
     // Define executable
@@ -75,4 +74,13 @@ pub fn build(b: *std.Build) void {
     test_step.dependOn(&run_lib_unit_tests.step);
     test_step.dependOn(&run_exe_unit_tests.step);
     test_step.dependOn(&run_external_tests.step);
+
+    // Create docs
+    const install_docs = b.addInstallDirectory(.{
+        .source_dir = lib.getEmittedDocs(),
+        .install_dir = .prefix,
+        .install_subdir = "docs",
+    });
+    const docs_step = b.step("docs", "Install docs into zig-out/docs");
+    docs_step.dependOn(&install_docs.step);
 }
