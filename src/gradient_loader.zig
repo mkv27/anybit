@@ -35,13 +35,9 @@ fn precomputeTruecolorGradient(base_color: RGB) void {
         // The factor adjusts the intensity of the color variation, limiting extreme brightness or darkness to keep the gradient visually balanced.
         const factor: f32 = 0.7 + wave * 0.3;
 
-        const r_scaled: u8 = @intFromFloat(@as(f32, @floatFromInt(base_color.r)) * factor);
-        const g_scaled: u8 = @intFromFloat(@as(f32, @floatFromInt(base_color.g)) * factor);
-        const b_scaled: u8 = @intFromFloat(@as(f32, @floatFromInt(base_color.b)) * factor);
-
-        const r: u8 = @truncate(r_scaled);
-        const g: u8 = @truncate(g_scaled);
-        const b: u8 = @truncate(b_scaled);
+        const r: u8 = @intFromFloat(@as(f32, @floatFromInt(base_color.r)) * factor);
+        const g: u8 = @intFromFloat(@as(f32, @floatFromInt(base_color.g)) * factor);
+        const b: u8 = @intFromFloat(@as(f32, @floatFromInt(base_color.b)) * factor);
 
         // Format the ANSI background sequence for each position.
         precomputed_gradient[j_usize] = std.fmt.allocPrint(
